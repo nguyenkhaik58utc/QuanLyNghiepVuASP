@@ -1,0 +1,11 @@
+﻿@using EntityFW.EF6;
+@model List<Role>
+
+
+<select class="form-control"
+        style="border-radius: 2em; margin-top: 0.3em;" id="optionRoles">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Role_ID">@item.Role_Name</option>
+    }
+</select>

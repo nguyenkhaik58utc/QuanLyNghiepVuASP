@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "XemLuong";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding: 50px">
+    <h2>Lương Tháng @ViewData["Date"]</h2>
+    <div class="row" style="font-size:26px;margin-top:50px">
+        <div class="col-md-4">
+            <p>Tổng giờ làm chính thức : </p>
+        </div>
+        <div class="col-md-8"> @ViewData["tongGioLamChinhThuc"]</div>
+    </div>
+
+
+    <div class="row" style="        font-size: 26px;
+        margin-top: 10px">
+        <div class="col-md-4">
+            <p>Tổng giờ làm thêm : </p>
+        </div>
+        <div class="col-md-8"> @ViewData["tongGioLAmOverTime"]</div>
+    </div>
+    <div class="row" style="font-size:26px;margin-top:10px">
+        <div class="col-md-4">
+            <p>Tổng giờ làm nhân viên : </p>
+        </div>
+        <div class="col-md-8"> @ViewData["tongGioLamNhanVien"]</div>
+    </div>
+    <div class="row" style="font-size:26px;margin-top:10px">
+        <div class="col-md-4">
+            <p>Tổng giờ làm của tháng : </p>
+        </div>
+        <div class="col-md-8"> @ViewData["tongGioLam"]</div>
+    </div>
+    <div class="row" style="font-size:26px;margin-top:10px">
+        <div class="col-md-4">
+            <p>Lương : </p>
+        </div>
+        <div class="col-md-8">@ViewData["luong"]</div>
+    </div>
+</div>
+

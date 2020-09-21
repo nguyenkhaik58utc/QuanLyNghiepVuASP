@@ -1,0 +1,23 @@
+﻿@using BigExample.Areas.Admin.Model;
+@model List<MenuModel>
+
+
+    <div id="sidebar-container">
+        <div id="sidebar-session">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                    <img id="hide-side-bar" alt="arrow" src="~/images/left-arrow-white.png">
+                </div>
+
+                <ul class="list-unstyled">
+                    @foreach (var item in Model)
+                    {
+                        <li><a href="@Url.Action(item.menu_url, item.menu_screen, null)" id="@item.menu_url">@item.menu_name</a></li>
+                    }
+                    <li><a href="https://localhost:44364/Admin/Login/Index">Đăng xuất</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+

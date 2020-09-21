@@ -1,0 +1,114 @@
+﻿@using BigExample.Areas.Admin.Model;
+@model List<PostModel>
+@{
+    ViewBag.Title = "DangBai";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <h2 style="margin-left: 50px;margin-top:50px;text-align:center">Đăng Bài</h2>
+    <script src="~/Js/post.js"></script>
+
+    <table class=" table order-list" id="tableAAAA">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Chủ đề</th>
+                <th>Nội dung</th>
+                <th>Url File</th>
+                <th>Xóa</th>
+                <th>Sửa</th>
+            </tr>
+        </thead>
+        <tbody id="tablePost"></tbody>
+
+
+
+    </table>
+    <button class="btn btn-info" onclick="getAddPost()" data-target='#myPopupThemMoi' data-toggle='modal'> Thêm mới</button>
+
+    <!--  popup add  -->
+    <div id="myPopupThemMoi" class="modal fade" style="margin-top: 100px;">
+        <div class="modal-dialog" style="width:1119px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 align="center" class="modal-title">Thêm mới</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <input type="text" id="postIdEdit" hidden />
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p style="text-align:center;font-size:26px">Chủ Đề</p>
+                        </div>
+                        <div class="col-md-9">
+                            <textarea type="text" style="height: 3em; border-radius: 2em; margin-top: 0.3em; width: 900px;padding:10px" id="chude" ></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-2">
+                            <p style="text-align: center; font-size: 26px">Nội Dung</p>
+                        </div>
+                        <div class="col-md-9">
+                            <textarea type="text" style="height: 400px; border-radius: 2em; margin-top: 0.3em; width:900px;padding:20px" id="noidung" ></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-2">
+                            <p style="text-align:center;font-size:26px">Url File<br />(Nếu có)</p>
+                        </div>
+                        <div class="col-md-9">
+                            <textarea type="url" style="height: 100px; border-radius: 2em; margin-top: 0.3em;width:900px;padding:20px" id="urlFile"> </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button id="submit-addPost-btn"
+                            style="background-color: #055608; color: white"
+                            class="btn btn-default for-addPost" data-dismiss="modal">
+                        CREATE
+                    </button>
+
+                    <button id="submit-updatePost-btn"
+                            style="background-color: #055608; color: white"
+                            class="btn btn-default for-updatePost" data-dismiss="modal">
+                        UPDATE
+                    </button>
+                    <button id="canclePost-btn"
+                            style="background-color: #b51515; color: white"
+                            class="btn btn-default" data-dismiss="modal">
+                        CANCLE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- popup xoa -->
+
+<div id="popupDeletePost" class="modal fade">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="text-align: center;" id="titleDeletePost">
+                </h2>
+            </div>
+            <div class="modal-body" hidden>
+                <form method="post" id="insert_form">
+                    <input type="number" name="PostId" id="PostId"
+                           class="form-control" hidden />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button onclick="functionDeletePost()" type="button" class="close"
+                        data-dismiss="modal">
+                    Delete
+                </button>
+                <button type="button" class="close" data-dismiss="modal" style="margin-right: 30px">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

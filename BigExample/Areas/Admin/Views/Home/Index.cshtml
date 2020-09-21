@@ -1,0 +1,25 @@
+﻿@using EntityFW.EF6;
+@model List<Post>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" align="center">
+
+   <h2> Thông Báo Công Ty</h2>
+    <br />
+    <br />
+    <div style="padding:30px">
+    @foreach(var index in Model)
+    {
+        <div class="row">
+            <div class="col-md-1"> <img src="https://lh4.googleusercontent.com/-iV1Yi3AGEE8/VF-1jHdJtMI/AAAAAAAAbeM/GaYymBnk87I/s1600/Nhung-bai-tho-hay-chao-buoi-sang-ngay-moi-vui-ve-%2B(1).gif" height="50px" width="50px"></div>
+            <div class="col-md-11" style="text-align:left;font-size:26px"><a href="@Url.Action("getPost","Home",new { Post_ID=index.Post_ID})">@index.theme  (@index.content)</a></div>
+        </div>
+    }
+    </div>
+
+</div>
+

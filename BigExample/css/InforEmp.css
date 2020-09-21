@@ -1,0 +1,19 @@
+﻿
+
+.nameEmp {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #FFFFFF;
+    padding-top: 25px;
+}
+
+.ifmEmp {
+    text-align: left;
+    color: #FFFFFF;
+}
+
+td {
+    padding-left: 20px;
+}
+th {
+    padding-left: 30px;
+}
